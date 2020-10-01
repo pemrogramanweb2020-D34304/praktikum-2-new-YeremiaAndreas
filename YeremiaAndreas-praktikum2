@@ -1,0 +1,69 @@
+<?php
+$user = array(  array(  "nama"	        => "Arsene Lupin",
+                        "nik"	        => 1234,
+                        "jenis_kelamin" => "male",
+                        "tgl_lahir"     => "1902-03-23"), 
+                array(  "nama"	         => "Sherlock Holmes", 
+                        "nik"			 => 4321,
+                        "jenis_kelamin"	 => "male",
+                        "tgl_lahir"		 => "1876-08-16"), 
+                array(  "nama" 		      => "Irene Adler",
+                        "nik"			  => 6789,
+                        "jenis_kelamin"	  => "female",
+                        "tgl_lahir"		  => "1884-10-07"),
+        );
+
+$tes1 = "Sherlock Holmes";
+$tes2 = "Watson";
+
+$run = true;
+while($run){
+    for($x = 0; $x < count($user); $x++){
+        if($user[$x]['nama'] == $tes1){
+            echo "Nama = ",$user[$x]['nama'];
+            $run = false;
+            break;
+        }
+    }
+}
+echo "<br>";
+
+$run = true;
+while($run){
+    for($x = 0; $x < count($user); $x++){
+        if($user[$x]['nama'] == $tes2){
+            echo "Nama = ",$user[$x]['nama'];
+            $run = false;
+            break;
+        }
+    }
+}
+$run = true;
+
+echo "<br>";
+while($run){
+    foreach($user as $nomor => $jenis){
+        foreach($jenis as $data => $value){
+            if($value == $tes1){
+                echo "$data = $value <br>";
+                $run = false;
+                break; 
+            }  
+        }
+    }
+}
+$run = true;
+
+echo "<br>";
+while($run){
+    foreach($user as $nomor => $jenis){
+        foreach($jenis as $data => $value){
+            if($value == $tes2){
+                echo "$data = $value <br>";
+                $run = false;
+                break; 
+            }  
+        }
+    }
+}
+?> 
